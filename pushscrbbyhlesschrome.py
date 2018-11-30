@@ -62,15 +62,17 @@ def main():
     updated = getUpdatedHighlight()
     print(updated)
 
-    USER = 'gooname'
-    PASS = 'goopass'
+    USER = 'id'
+    PASS = 'pass'
+    
 
 
     options = Options()
-    options.binary_location = '/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary'
+    # options.binary_location = '/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary'
     #options.add_argument('--headless')
     #options.add_argument('--disable-gpu')
-    driver = webdriver.Chrome(chrome_options=options)
+    # driver = webdriver.Chrome(chrome_options=options)
+    driver = webdriver.Chrome('/usr/local/bin/chromedriver')
     try:
         url = 'https://scrapbox.io/xavermemo/'
         driver.get(url)

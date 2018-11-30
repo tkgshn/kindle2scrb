@@ -10,6 +10,8 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.action_chains import ActionChains
+import chromedriver_binary
+
 from bs4 import BeautifulSoup
 
 import signal
@@ -24,8 +26,9 @@ import collections as cl
 
 
 def main():
-    USER = 'amaname'
-    PASS = 'amapass'
+    USER = 'id'
+    PASS = 'pass'
+    
 
 
     # options = Options()
@@ -40,8 +43,9 @@ def main():
     # )
     options = Options()
     options.add_experimental_option('prefs', {'intl.accept_languages': 'ja'})
-    options.binary_location = '/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary'
-    driver = webdriver.Chrome(chrome_options=options)
+    # options.binary_location = '/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary'
+    # driver = webdriver.Chrome(chrome_options=options)
+    driver = webdriver.Chrome('/usr/local/bin/chromedriver')
     # driver.set_window_size(1920, 1080)
     print('drive start')
     # url = 'https://www.amazon.co.jp/ap/signin?clientContext=375-4875962-6582025&openid.return_to=https%3A%2F%2Fread.amazon.co.jp%2Fkp%2Fnotebook%3FamazonDeviceType%3DA2CLFWBIMVSE9N&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=amzn_kp_jp&openid.mode=checkid_setup&marketPlaceId=A1VC38T7YXB528&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&pageId=amzn_kp_notebook_us&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.pape.max_auth_age=1209600&siteState=clientContext%3D355-3088953-6443912%2CsourceUrl%3Dhttps%253A%252F%252Fread.amazon.co.jp%252Fkp%252Fnotebook%253FamazonDeviceType%253DA2CLFWBIMVSE9N%2Csignature%3DSZXy31cn2x1mpyj2FotQcZRR2j2Bq3gj3D&language=ja_JP&auth=Customer+is+not+authenticated'
