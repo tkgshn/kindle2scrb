@@ -32,7 +32,7 @@ def main():
 
     options = Options()
     options.add_experimental_option('prefs', {'intl.accept_languages': 'ja'})
-    driver = webdriver.Chrome(ChromeDriverManager().install())
+    driver = webdriver.Chrome()
     print('drive start')
     url = 'https://read.amazon.co.jp/kp/notebook?amazonDeviceType=A2CLFWBIMVSE9N'
     driver.get(url)
