@@ -1,3 +1,13 @@
+name: Run Kindle Highlight to Scrapbox
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 毎日UTC 0時に実行します。必要に応じて変更してください。
+  push:
+    branches:
+      - main  # この行は必要に応じて調整または削除します
+  workflow_dispatch:
+
 jobs:
   run-scripts:
     runs-on: ubuntu-latest
