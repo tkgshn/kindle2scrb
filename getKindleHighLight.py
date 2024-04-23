@@ -26,9 +26,9 @@ import collections as cl
 
 
 def main():
-    USER = 'id'
-    PASS = 'pass'
-    
+    USER = os.getenv('KINDLE_USER')
+    PASS = os.getenv('KINDLE_PASS')
+
 
 
     # options = Options()

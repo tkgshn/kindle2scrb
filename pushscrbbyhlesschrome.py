@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from time import sleep
-
+import os
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
@@ -16,6 +16,10 @@ import urllib.request
 
 import json
 import re
+
+def main():
+    USER = os.getenv('SCRAPBOX_USER')
+    PASS = os.getenv('SCRAPBOX_PASS')
 
 def getHighlightTitle():
     # aws
@@ -64,7 +68,7 @@ def main():
 
     USER = 'id'
     PASS = 'pass'
-    
+
 
 
     options = Options()
@@ -74,7 +78,7 @@ def main():
     # driver = webdriver.Chrome(chrome_options=options)
     driver = webdriver.Chrome('/usr/local/bin/chromedriver')
     try:
-        url = 'https://scrapbox.io/xavermemo/'
+        url = 'https://scrapbox.io/tkgshn-private/'
         driver.get(url)
         sleep(4)
 

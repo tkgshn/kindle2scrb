@@ -1,0 +1,32 @@
+jobs:
+  run-scripts:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+
+    - name: Install Dependencies
+      run: pip install -r requirements.txt
+
+    - name: Set up Headless Chrome
+      run: |
+        # ChromeとChromedriverのインストールコマンド
+        # この部分は変更なし
+
+    - name: Run getKindleHighLight.py
+      run: python getKindleHighLight.py
+      env:
+        KINDLE_USER: ${{ secrets.KINDLE_USER }}
+        KINDLE_PASS: ${{ secrets.KINDLE_PASS }}
+
+    - name: Run pushscrbbyhlesschrome.py
+      run: python pushscrbbyhlesschrome.py
+      env:
+        SCRAPBOX_USER: ${{ secrets.SCRAPBOX_USER }}
+        SCRAPBOX_PASS: ${{ secrets.SCRAPBOX_PASS }}
+        SCRAPBOX_API_TOKEN: ${{ secrets.SCRAPBOX_API_TOKEN }}
