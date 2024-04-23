@@ -3,7 +3,3 @@ beautifulsoup4
 selenium==3.141.0
 chromedriver_binary
 numpy==1.21
-collections
-os
-urllib
-re
